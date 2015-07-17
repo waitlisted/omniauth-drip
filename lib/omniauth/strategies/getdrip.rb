@@ -1,0 +1,38 @@
+require 'omniauth/strategies/oauth2'
+
+module OmniAuth
+  module Strategies
+    class Getdrip < OmniAuth::Strategies::OAuth2
+
+      option :name, "getdrip"
+
+      option :access_token_options, {
+        :header_format => 'Bearer %s',
+        :param_name => 'token'
+      }
+
+      option :client_options, {
+        site: "https://api.getdrip.com",
+        authorize_url: "https://www.getdrip.com/oauth/authorize",
+        token_url: "https://www.getdrip.com/oauth/token"
+      }
+
+      uid { access_token.client.id }
+
+      info do
+        {
+          email: user_info["users"][0]["email"]
+        }
+      end
+
+      def user_info
+        @user_info ||= JSON.parse(access_token.get("/v2/user").body)
+      end
+
+      def raw_info
+        {}
+      end
+
+    end
+  end
+end

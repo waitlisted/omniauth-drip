@@ -1,13 +1,11 @@
-# Omniauth::Slack
+# Omniauth::Getdrip
 
-This Gem contains the Slack strategy for OmniAuth.
+This Gem contains the Getdrip strategy for OmniAuth.
 
 ## Before You Begin
 
 You should have already installed OmniAuth into your app; if not, read the [OmniAuth README](https://github.com/intridea/omniauth) to get started.
 
-
-Now sign into the [Slack application dashboard](https://api.slack.com/applications) and create an application. Take note of your API keys.
 
 
 ## Using This Strategy
@@ -15,76 +13,24 @@ Now sign into the [Slack application dashboard](https://api.slack.com/applicatio
 First start by adding this gem to your Gemfile:
 
 ```ruby
-gem 'omniauth-slack'
+gem 'omniauth-getdrip'
 ```
 
 If you need to use the latest HEAD version, you can do so with:
 
 ```ruby
-gem 'omniauth-slack', github: 'kmrshntr/omniauth-slack'
+gem 'omniauth-getdrip', github: 'kmrshntr/omniauth-slack'
 ```
 
 Next, tell OmniAuth about this provider. For a Rails app, your `config/initializers/omniauth.rb` file should look like this:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :slack, "API_KEY", "API_SECRET", scope: "client"
+  provider :getdrip, "API_KEY", "API_SECRET"
 end
 ```
 
-Replace `"API_KEY"` and `"API_SECRET"` with the appropriate values you obtained [earlier](https://api.slack.com/applications).
 
-If you are using [Devise](https://github.com/plataformatec/devise) then it will look like this:
-
-```ruby
-Devise.setup do |config|
-  # other stuff...
-
-  config.omniauth :slack, ENV["SLACK_APP_ID"], ENV["SLACK_APP_SECRET"], scope: 'client'
-
-  # other stuff...
-end
-```
-
-Slack lets you choose from a [few different scopes](https://api.slack.com/docs/oauth#auth_scopes).
-
-
-## Authentication Options
-
-### State
-
-> *unique string to be passed back upon completion*
-
-> The state parameter should be used to avoid forgery attacks by passing in a value that's unique to the user you're authenticating and checking it when auth completes.
-
-for a logged in user, you might want to include state, for example with devise:
-
-`https://www.yourapp.com/users/auth/slack?state=1234-foobutter`
-
-creates an auth session with `state`
-
-After a successful auth, the callback request will include `request.env["omniauth.params"]` hash
-
-```ruby
-class CallbackController < ApplicationController
-  def slack
-    request.env["omniauth.params"]["state"]
-    # => "1234-foobutter"
-  end
-end
-```
-
-### Team
-
-> If you don't pass a team param, the user will be allowed to choose which team they are authenticating against. Passing this param ensures the user will auth against an account on that particular team.
-
-If you need to ensure that the users use the team whose team_id is 'XXXXXXXX', you can do so by passing `:team` option in your `config/initializers/omniauth.rb` like this:
-
-```ruby
-Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :slack, "API_KEY", "API_SECRET", scope: "identify,read,post", team: 'XXXXXXXX'
-end
-```
 
 ## Contributing
 
@@ -93,10 +39,4 @@ end
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kmrshntr/omniauth-slack/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kmrshntr/omniauth-slack/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

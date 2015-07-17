@@ -1,14 +1,14 @@
 # coding: utf-8
-require File.expand_path('../lib/omniauth-slack/version', __FILE__)
+require File.expand_path('../lib/omniauth-getdrip/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.name          = "omniauth-slack"
-  spec.version       = Omniauth::Slack::VERSION
-  spec.authors       = ["kimura"]
-  spec.email         = ["kimura@enigmo.co.jp"]
-  spec.description   = %q{OmniAuth strategy for Slack}
-  spec.summary       = %q{OmniAuth strategy for Slack}
-  spec.homepage      = "https://github.com/kmrshntr/omniauth-slack.git"
+  spec.name          = "omniauth-getdrip"
+  spec.version       = Omniauth::Getdrip::VERSION
+  spec.authors       = ["j-mcnally"]
+  spec.email         = ["justin@waitlisted.co"]
+  spec.description   = %q{OmniAuth strategy for Getdrip}
+  spec.summary       = %q{OmniAuth strategy for Getdrip}
+  spec.homepage      = "https://github.com/j-mcnally/omniauth-getdrip.git"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
