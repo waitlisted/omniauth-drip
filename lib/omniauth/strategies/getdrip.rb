@@ -25,12 +25,18 @@ module OmniAuth
         }
       end
 
+      extra do
+        {
+          accounts: raw_info["accounts"]
+        }
+      end
+
       def user_info
         @user_info ||= JSON.parse(access_token.get("/v2/user").body)
       end
 
       def raw_info
-        {}
+        @raw_info ||= JSON.parse(access_token.get("/v2/accounts").body)
       end
 
     end
