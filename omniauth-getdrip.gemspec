@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["justin@waitlisted.co"]
   spec.description   = %q{OmniAuth strategy for Getdrip}
   spec.summary       = %q{OmniAuth strategy for Getdrip.com}
-  spec.homepage      = "https://github.com/j-mcnally/omniauth-getdrip.git"
+  spec.homepage      = "https://github.com/waitlisted/omniauth-getdrip.git"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
