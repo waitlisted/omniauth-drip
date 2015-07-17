@@ -1,6 +1,6 @@
-# Omniauth::Getdrip
+# Omniauth::Drip
 
-This Gem contains the Getdrip strategy for OmniAuth.
+This Gem contains the [Drip](https://www.getdrip.com) strategy for OmniAuth.
 
 ## Before You Begin
 
@@ -13,20 +13,20 @@ You should have already installed OmniAuth into your app; if not, read the [Omni
 First start by adding this gem to your Gemfile:
 
 ```ruby
-gem 'omniauth-getdrip'
+gem 'omniauth-drip'
 ```
 
 If you need to use the latest HEAD version, you can do so with:
 
 ```ruby
-gem 'omniauth-getdrip', github: 'waitlisted/omniauth-getdrip'
+gem 'omniauth-drip', github: 'waitlisted/omniauth-drip'
 ```
 
 Next, tell OmniAuth about this provider. For a Rails app, your `config/initializers/omniauth.rb` file should look like this:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :getdrip, "API_KEY", "API_SECRET"
+  provider :drip, "API_KEY", "API_SECRET"
 end
 ```
 
@@ -39,4 +39,3 @@ end
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
