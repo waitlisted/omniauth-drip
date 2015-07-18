@@ -1,14 +1,14 @@
 # coding: utf-8
-require File.expand_path('../lib/omniauth-getdrip/version', __FILE__)
+require File.expand_path('../lib/omniauth-drip/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.name          = "omniauth-getdrip"
-  spec.version       = Omniauth::Getdrip::VERSION
+  spec.name          = "omniauth-drip"
+  spec.version       = Omniauth::Drip::VERSION
   spec.authors       = ["j-mcnally"]
   spec.email         = ["justin@waitlisted.co"]
   spec.description   = %q{OmniAuth strategy for Getdrip}
   spec.summary       = %q{OmniAuth strategy for Getdrip.com}
-  spec.homepage      = "https://github.com/waitlisted/omniauth-getdrip.git"
+  spec.homepage      = "https://github.com/waitlisted/omniauth-drip.git"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -19,5 +19,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'omniauth-oauth2', "~> 1.2"
 
   spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake", "~> 0"
 end

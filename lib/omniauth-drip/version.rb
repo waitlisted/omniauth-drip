@@ -1,5 +1,5 @@
 module Omniauth
-  module Getdrip
+  module Drip
     VERSION = "2.0.3"
   end
 end

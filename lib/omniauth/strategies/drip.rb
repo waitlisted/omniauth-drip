@@ -2,9 +2,9 @@ require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
-    class Getdrip < OmniAuth::Strategies::OAuth2
+    class Drip < OmniAuth::Strategies::OAuth2
 
-      option :name, "getdrip"
+      option :name, "drip"
 
       option :access_token_options, {
         :header_format => 'Bearer %s',
