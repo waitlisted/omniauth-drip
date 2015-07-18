@@ -19,7 +19,7 @@ gem 'omniauth-getdrip'
 If you need to use the latest HEAD version, you can do so with:
 
 ```ruby
-gem 'omniauth-getdrip', github: 'kmrshntr/omniauth-slack'
+gem 'omniauth-getdrip', github: 'waitlisted/omniauth-getdrip'
 ```
 
 Next, tell OmniAuth about this provider. For a Rails app, your `config/initializers/omniauth.rb` file should look like this:
